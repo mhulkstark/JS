@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+  //系统的创建函数
+
+// var obj = new Object;
+// var obj = new Object({name :'gebilaowang',age:20});
+// console.log(obj);
+
+var obj1 = new Object;
+var obj1 = new Object({name:'gebilaowang',age:20});
+console.log(obj1);
+
+
+//工厂函数
+
+// function creatvePerson (name,color) {
+//     var obj = {
+//         name : name,
+//         color : color,
+//     }
+//     return obj;
+// }
+// var q = creatvePerson('laowang','red');
+// console.log(q);
+
+
+//构造函数
+// function Person (name,age) {
+//     this.name = name,
+//     this.age = age,
+//     this.sayHi = function () {
+//         console.log(this.name + '好久不见，数千公里的距离太远了');
+//     }
+//     return;
+// }
+ 
+// var yt = new Person ('hyq',22)
+// console.log(yt);
+
+    // function Person (name,age) {
+    //     this.name = name
+    //     this.age = age
+    //     this.sayName = function () {
+    //         console.log(this.name);
+            
+    //     }
+    //     return
+    // }
+    // var p1 = new Person('fsfs',18)
+    // console.log(p1);
+    
+
+
+//  冒泡排序
+var arr = [2,56,13,9,15,34];
+function getArray(arr) {
+    for(var i = 0; i<arr.length; i++){
+        for(var k = 0; k<arr.length; k++){
+            if(arr[k] >arr[k+1]){
+                var temp = arr[k];
+                arr[k] = arr[k+1];
+                arr[k+1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+var res = getArray(arr);
+console.log(res);
+
+
+
+
+
+    </script>
+</body>
+</html>

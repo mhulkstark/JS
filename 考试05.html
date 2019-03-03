@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // 封装一个对数组元素进行冒泡排序的函数（从大到小）
+    
+//     var  arr = [8,13,25,2,4,9,32];
+//     function getArray(arr){
+//     for(var i = 0; i < arr.length-1; i++){
+//         for(var j = 0; j<arr.length-1-i; j++){
+//             if(arr[j]<arr[j+1]){  
+//                 var temp = arr[j];
+//                 arr[j] = arr[j+1];
+//                 arr[j+1] = temp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+// var res = getArray(arr);
+// console.log(res);
+
+
+var arr = [2,56,32,21,24];
+function getArray(arr){
+    for(var i = 0; i<arr.length-1; i++) {
+        for(var j = 0; j<arr.length-1-i; j++){
+            if(arr[j]<arr[j+1]) {
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+var res = getArray(arr);
+console.log(res);
+
+
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //js 中没有块级作用域  只有全局作用域和函数作用域（词法作用域）
+    
+    // console.log(a);  //underfined
+    // if (true) {
+    //     var a = 'zs'; 
+    // }
+    // console.log(a);   //zs
+
+
+    var a = 100;
+    function fn() {
+        var a = 200;
+        console.log('fn', a); 
+    }
+    console.log('global', a); 
+    fn();
+
+              
+    // 作用域链
+    // 作用域链是在函数定义的时候确定下来的
+    var a = 100;
+    function fn() {
+        var b = 200;
+        console.log(a); 
+        console.log(b); 
+    }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+        // 原型链继承： 
+        //  原理： 通过构造函数创建(new)的实例对象可以直接继承自原型上的任何成员
+
+        // function Person (name) {
+        //     this.name = name;
+        // }
+        // Person.prototype = {
+        //     constructor : Person,
+        //     color : 'green',
+        //     gender : 'male',
+        //     fn : function () {
+
+        //     }
+        // };                                                  
+        // var p = new Person();
+        // console.log(p.constructor);
+        
+
+function Person (name) {
+    this.name = name;
+}
+
+Person.prototype = {
+    constructor : Person,
+    color : 'red',
+    gender : 'male',
+    fn : function() {
+
+    }
+};
+
+var p = new Person();
+console.log(Person.prototype.color);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function Person (name) {
+//     this.name = name;
+// }
+// Person.prototype = {
+//     constructor : Person,
+//     // color : 'red',
+//     color : 'red',
+//     gender : 'male',                                                
+//     fn : function () {
+
+//     }
+// };
+// var p = new Person();
+// console.log(p.__proto__.constructor);
+
+
+        </script>
+</body>
+</html>

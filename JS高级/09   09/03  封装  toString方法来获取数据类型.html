@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 封装获取数据类型的方法
+    // getType
+
+    function  getType (obj) {
+        return Object.prototype.toString.call(obj).slice(8,-1);
+    }
+    console.log(getType([]));
+    console.log(getType({}));
+    console.log(getType(Function));
+    console.log(getType(toString));  //function
+    console.log(getType(''));        //string
+    console.log(getType(123));       //number
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

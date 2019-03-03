@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 预解析:  预先解析
+    // 预解析的规则：
+    //  1. 优先提升函数，在是变量提升
+    //  2. 如果遇到重名的变量声明， 会被忽略
+    
+    // console.log(a);
+    //     function a() {
+    //         console.log("aaaaa");
+    //     }
+    //     var a = 1;
+    //     console.log(a); 
+    
+// 预解析过后的代码
+    //     function a() {
+    //         console.log("aaaaa");
+    //     }
+    //    // var a;
+    //     console.log(a);
+    //     a = 1;
+    //     console.log(a);
+
+
+
+    // var a = 1;
+    // console.log(a);
+    // function a() {
+
+    // }
+    // a();
+
+
+// 预解析过后的代码
+    function a() {
+
+    }
+   // var a;
+    a = 1;
+    console.log(a);
+    a();
+
+
+    </script>
+</body>
+</html>

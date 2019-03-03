@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <button>按钮01</button>
+        <button>按钮02</button>
+        <button>按钮03</button>
+        <button>按钮04</button>
+        <button>按钮05</button>
+        <button>按钮06</button>
+        <button>按钮07</button>
+        <button>按钮08</button>
+        <button>按钮09</button>
+        <button>按钮010</button>
+
+
+        <script>
+        // 闭包的面试题
+        // 1. 给10个button注册click，打印出各自的下标（使用闭包的方式）
+        var btns = document.querySelectorAll('button');
+
+        //第一种写法
+
+        // for(var i = 0; i<btns.length; i++) {
+        //     (function (j){
+        //         var j = i;
+        //         console.log(j);
+        //         btns[j];
+        //         btns[i].onclick = function () {
+        //             console.log(j);
+                    
+        //         }                           
+        //     })(i)
+        // }
+        
+        // for(var i = 0; i<btns.length; i++){
+        //     (function (j){
+        //         var j = i;
+        //         console.log(j);
+        //         btns[j];
+        //         btns[i].onclick = function () {
+        //             console.log(j);    
+        //         }
+        //     })(i)
+        // }
+
+
+
+        //第二种写法
+        // 给每个按钮注册了click，是自调用函数的返回值，就是内部函数
+        // for(var i = 0; i<btns.length; i++){
+        //     btns[i].onclick = (function (j){
+
+        //         return function (){
+        //             console.log(j);
+                    
+        //         }
+        //     }) (i)
+        // }
+
+          for(var i = 0; i<btns.length; i++) {
+              btns[i].onclick = (function (j){
+                  return function () {
+                      console.log(j);
+                      
+                  }
+              }) (i)
+          }
+
+
+        // 第三种写法
+        for(let i = 0; i<btns.length; i++) {
+           btns[i].onclick = function () {
+               console.log(i);  
+           }
+        }
+
+
+
+        </script>
+</body>
+</html>

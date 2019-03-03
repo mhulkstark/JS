@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //将伪数组转化为真数组  且内容一样
+    // var arr1 = {
+    //         0: '老罗',
+    //         1: '马哥',
+    //         2: '黑胖',
+    //         3: '老公',
+    //         length: 4
+    // }
+    // var ret = Array.prototype.slice.call(arr1);
+    // console.log(ret);
+    
+
+
+    var arr1 = {
+            0: '老罗',
+            1: '马哥',
+            2: '黑胖',
+            3: '老公',
+            length: 4
+    }
+    var arr2 = Array.prototype.slice.call(arr1);
+    console.log(arr2);
+    
+    </script>
+</body>
+</html>

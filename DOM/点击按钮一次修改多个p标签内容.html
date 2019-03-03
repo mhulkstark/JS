@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <!-- 点击按钮修改多个p标签内容 -->
+
+<input type="button" value="显示效果" id="btn"/>
+<div id="dv1">
+    
+            <p>打不过我吧</p>
+            <p>打不过我吧</p>
+            <p>打不过我吧</p>
+            <p>打不过我吧</p>
+            <p>打不过我吧</p>     
+</div>
+
+<div id="dv2">
+    <p>什么恋</p>
+    <p>什么恋</p>
+    <p>什么恋</p>
+</div>
+
+
+    <script> 
+    document.getElementById("btn").onclick=function () {
+       //    根据标签名字获取标签
+       var pObjs=document.getElementsByTagName("p")
+       //  遍历这个数组
+       for(var i = 0; i<pObjs.length;i++){
+       // 给每个标签设置新的内容
+        pObjs[i].innerText="你们全都一起上吧 我根本没在怕";
+    }
+        
+    };
+   
+    
+    
+    
+    // document.getElementById("btn").onclick=function () {
+    //     //   var pObjs=document.getElementsByTagName("p");
+    //    var pObjs=document.getElementById("dv1").getElementsByTagName("p")
+    //       for(var i = 0; i<pObjs.length; i++){
+    //           pObjs[i].innerText="你们全都一起上吧 我根本没在怕";
+    //       }
+    // };
+    
+
+
+    </script>
+</body>
+</html>

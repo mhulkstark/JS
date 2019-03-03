@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+   <button id="btn">按钮</button>
+   <p>多个P标签</p>
+   <p>多个P标签</p>
+   <p>多个P标签</p>
+   <p>多个P标签</p>
+   <p>多个P标签</p>
+    <!-- // 2. 点击按钮修改多个p标签的内容, -->
+<script>
+//  document.getElementById("btn").onclick=function () {
+//       var pObjs = document.getElementsByTagName("p");
+//         for(var i = 0; i<pObjs.length; i++){
+//             pObjs[i].innerText = "修改"
+//         }
+//  };
+
+
+var btn = document.getElementById("btn");
+var p1 = document.getElementsByTagName("p");
+btn.onclick=function () {
+    for(var i = 0; i<p1.length; i++){
+        p1[i].innerText = "要修改"
+    }
+};
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

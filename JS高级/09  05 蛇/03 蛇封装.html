@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #map{
+        width: 1200px;
+        height: 800px;
+        background-color: #ccc;
+        margin: 50px auto;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="../food.js/20.food.js"></script>
+    <script src="snake.js"></script>
+    <script>
+     // 地图元素
+var map = document.querySelector('#map');
+    // 创建食物的实例对象
+    var f =new Food();
+    // 把食物渲染到地图上
+  f.render(map);
+
+   // s 是实例对象
+var s = new Snake();
+  // 把蛇渲染添加到地图上
+ s.render(map);
+ // 开定时器，不停的去调用move方法，让蛇移动起来
+setInterval(function (){
+  s.move(map)
+},200)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

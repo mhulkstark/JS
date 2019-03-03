@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //this的指向问题
+    //四种调用模式
+    //1-函数调用模式 this => window
+    //2-方法调用模式 this => 调用这个方法的对象
+    //3-构造函数调用模式 this => 实例对象
+    //4-函数借调 call apply bind 可以任意指定this指向
+
+    //面试过程 遇到笔试题 如果是考察this指向问题 不看声明 只看调用
+     
+
+    // function fn() {
+    //     console.log(this === window);
+    // }
+    // fn();
+
+    // 2. 对象调用模式
+    // var obj = {
+    //     name: '波多野老师',
+    //     work: function () {
+    //         console.log(this);
+
+    //         console.log(this.name + "的职业是动作演员")
+    //     }
+    // };
+    // obj.work();
+
+
+    // 3. 构造函数new的时候（this指向的变化）
+    // function Foo(name) {
+    //     this.name = name;
+    //     console.log(this);
+    // }
+    // var f = new Foo("山形健");
+
+
+    
+    // 4. 借用方法（上下文调用模式）
+    // function fn(name) {
+    //     console.log(name);
+    //     console.log(this);
+    // }
+    // fn.call({x: 100}, "东尼大木");
+
+    </script>
+</body>
+</html>

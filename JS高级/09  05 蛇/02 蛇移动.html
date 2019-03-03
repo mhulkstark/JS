@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #map{
+        width: 1200px;
+        height: 800px;
+        background-color: #ccc;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="../food.js/20.food.js"></script>
+    <script>
+    // 地图元素
+    var map = document.querySelector('#map');
+    
+    // 创建食物的实例对象
+    var f = new Food();
+    
+     // 把食物渲染到地图上
+    f.render(map);
+    
+    // 写蛇对象
+        // 属性
+    // 方法
+        //    render:  渲染到地图上：  按照蛇对象的属性去创建蛇添加到地图上
+        //    move:    蛇移动，主要思路是修改body数据
+        //          1. 遍历每一节，让每一节发生改变，存在问题，影响性能（尤其蛇的节数太多了）
+        //          2. 复制当前的蛇头坐标，得到一个新的蛇头（newHead）， 然后根据蛇的移动方向决定newHead的坐标，
+        //             此时蛇节多了一节newHead，需要把蛇尾给移除掉
+
+    // 定义蛇构造函数
+   function Snake (options) {
+      options = options || {};
+      this.width = options.width || 20;
+      this.height = options.height || 20;
+      this.headBgc = options.headBgc || 'green';
+      this.bodyBgc = options.bodyBgc || 'red';
+      this.direction = options.direction || 'right';
+      
+      // 蛇的每一节坐标数据
+      this.body = options.body || [
+          {x:2,y:0},
+          {x:1,y:0},
+          {x:0,y:0}
+      ]
+   }
+    
+    // 给原型添加render方法
+    Snake.prototype.render = function () {
+        for(var i =0 ;i<this.body.length; i++){
+            var span = document.createElement('span');
+            var item = this.body[i];
+            span.style.width = this.width + 'px';
+            span.style.height = this.height + 'px';
+
+                // 蛇头的颜色和蛇身体的颜色不一样
+                // 优化
+            // if(i == 0){
+            //     sapn.style.backgroundColor = this.headBgc;
+            // }else{
+            //     span.style.backgroundColor = this.bodyBgc;
+            // }
+            span.style.backgroundColor = i == 0 ? this.headBgc : this.bodyBgc
+
+             // 设置位置 -- 根据蛇的每一节的坐标
+             span.style.position = 'absolute';
+             span.style.left = item.x * this.width + 'px';
+             span.style.top = item.y * this.height + 'px';
+
+             // 添加到地图上
+             map.appendChild(span);
+        }
+    }
+    
+    // 给原型添加move方法
+    Snake.prototype.move = function () {
+        // 思路：
+            // 1. 复制当前蛇头的坐标，得到新的蛇头，newHead
+            // 2. 根据蛇移动方向来决定newHead的坐标
+            // 3. 将newHead添加到蛇数据里面（body），添加（unshift）
+            // 4. 移除掉蛇尾
+            var newHead = {
+                x: this.body[0].x,    // 蛇头的x坐标
+                y:this.body[0].y    // 蛇头的y坐标
+            }
+           switch (this.direction) {
+               case 'up':
+               newHead.y--;
+               break;
+
+               case 'down':
+               newHead.y++;
+               break;
+
+               case 'left':
+               newHead.x--;
+               break;
+
+               case 'right':
+               newHead.x++;
+               break;
+           };
+     // 3. 将newHead添加到body中，作为第一项（第一项才是蛇头）
+      this.body.unshift(newHead);
+
+       // 4. 把body中的最后一项（蛇尾）给移除出
+       this.body.pop();
+
+       // 渲染之前把地图上已经存在的span给移除掉
+       var spans = map.querySelectorAll('span');
+       for(var i= 0;i<spans.length; i++){
+           map.removeChild(spans[i]);
+       }
+       // 这里已经是body数据修改后的最新数据，按照body的最新数据重新去渲染添加到地图上
+            // this  指向的是实例对象s
+            this.render();
+    }
+    
+    // s 是实例对象
+    var s = new Snake();
+    s.render();
+
+    setInterval(function (){
+        s.move();
+    },150)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

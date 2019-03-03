@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function f1 () {
+    //     var num = 10;
+    //     return function () {
+    //         console.log(num);
+            
+    //     }
+    // }
+    // var f2 = f1();
+    // f2();
+    // console.log(f2);
+    
+
+
+    // function fn () {
+    // var count = 1;             
+    //     count ++;
+    //     console.log("被调用了,次数是" +count);
+        
+    // }
+    // fn();  2
+    // fn();  2
+    // fn();  2
+
+    
+    // var count1 = 0;
+    // function fn1() {
+    //     count1++;
+    //     console.log("被调用了，次数是" + count1);
+
+    // }
+    // fn1();
+    // fn1();
+    // fn1();
+
+// 上面一种形式不安全   可以使用闭包解决
+    function outer() {
+        var count = 0;
+        function add() {                    
+            count++;
+            console.log("当前count" + count);
+
+        }
+        return add;
+    }
+    var result = outer();
+    result();
+    </script>
+</body>
+</html>

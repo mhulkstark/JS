@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    #map{
+        width: 1200px;
+        height: 800px;
+        background-color: #ccc;
+        margin: 50px auto;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="../food.js/20.food.js"></script>
+    <script>
+   // 地图元素
+var map = document.querySelector('#map')
+
+// 创建食物的实例对象
+var f = new Food();
+
+// 把食物渲染到地图上
+f.render(map);
+
+ // 写蛇对象
+        // 属性
+// 方法
+        //    render:  渲染到地图上：  按照蛇对象的属性去创建蛇添加到地图上
+// 定义蛇构造函数
+function Snake(options) {
+    options = options || {};
+    this.width = options.width || 20;
+    this.height = options.height || 20;
+    this.headBgc = options.headBgc || 'green';
+    this.bodyBgc = options.bodyBgc || 'red';  //未解
+    
+    // 蛇的每一节坐标数据
+    this.body = options.body || [
+        {x:2,y:0},
+        {x:1,y:0},
+        {x:0,y:0}
+    ]
+}
+    
+// 给原型添加render方法
+ // 实现思路：
+            // 1. 遍历body数据
+            // 2. 创建蛇元素（span），
+            // 3. 设置样式
+            // 4. 添加到地图上
+ Snake.prototype.render = function() {
+                // this 指向的就是实例对象s
+    for(var i = 0; i<this.body.length; i++){
+        var span = document.createElement('span');
+        var item = this.body[i]
+        span.style.width =  this.width + 'px';
+        span.style.height = this.height + 'px' 
+
+        // 蛇头的颜色和蛇身体的颜色不一样
+        // if(i == 0){
+        //     span.style.backgroundColor = this.headbgc; 
+        // }else{
+        //     span.style.backgroundColor = this.bodybgc
+        // }  也可以写成下面的形势
+        span.style.backgroundColor = i == 0 ? this.headBgc : this.bodyBgc;
+
+         // 设置位置 -- 根据蛇的每一节的坐标
+
+         span.style.position = 'absolute';
+         span.style.left = item.x * this.width + 'px';
+         span.style.top = item.y * this.height + 'px'; 
+
+         // 添加到地图上
+         map.appendChild(span);
+    }
+}
+var s = new Snake();
+s.render();
+
+
+        </script>
+</body>
+</html>

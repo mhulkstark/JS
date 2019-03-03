@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function Person () {
+    // }
+    // // 给原型添加extend方法
+    // Person.prototype.extend = function (obj) {
+    //     for(var k in obj) {
+    //         if(obj.hasOwnProperty){
+    //             this[k] = obj[k]
+    //         }
+    //     }  
+    // }
+    // Person.prototype.color = 'green';
+    // var chenge = {
+    //     handsome : 'handsome'
+    // }
+    // var xmg = {
+    //     car : 'ofo'
+    // }
+    // var lg = {
+    //     beauty : 'yaode'
+    // }
+    // Person.prototype.extend(chenge);
+    // Person.prototype.extend(xmg);
+    // Person.prototype.extend(lg);
+    // // 实例对象p能够继承自上面三个对象的属性
+    // var p = new Person();
+    // console.log(p.car);
+    // console.log(p.handsome);
+    // console.log(p.beauty);
+    
+
+    function Person() {
+
+        }
+
+        Person.prototype.extend = function (obj) {
+            for (var k in obj) {
+                if (obj.hasOwnProperty) {
+                    this[k] = obj[k]
+                }
+            }
+        }
+        Person.prototype.color = 'green';
+        var chenge = {
+            handsome: 'handsome'
+        }
+        var lg = {
+            beauty: 'yaode'
+        }
+        Person.prototype.extend(lg);
+        Person.prototype.extend(chenge);
+        var p = new Person();
+        console.log(p.handsome);
+        console.log(p.beauty);
+    
+    </script>
+</body>
+</html>

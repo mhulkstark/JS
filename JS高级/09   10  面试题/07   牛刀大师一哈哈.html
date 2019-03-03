@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第1题
+        // var a;
+        // if ("a" in window) {
+        //     var a = 10;
+        // }
+        // alert(a)    //弹出10
+
+
+        // 第2题  ???
+    //     var foo = 1;
+    //     function bar() {
+    //         if (!foo) {
+    //             var foo = 10;
+    //         }
+    //         alert(foo); 
+    //     }
+    //     bar();
+       
+
+
+    // // 第3题
+	// var num = 123;
+	// function f1(num) {
+	//     console.log(num); 
+	// }
+	// function f2() {
+	//     var num = 456;
+	//     f1(num);           
+	// }
+	// f2();  //456
+
+        
+
+    // 第4题
+	// function fn(){
+	//   var a = 1, b = 1, c = 1;    //  ";"  在语法中是结束的意思   而 "," 在语法中不是结束  所以var还可以接着作用于b 和 c
+	// }
+	// fn();
+	// console.log(c); 
+	// console.log(b);
+	// console.log(a);   
+
+
+    // function fn () {
+    //     var a=b=c=1;
+    // }
+    // fn();
+    // console.log(a);   // 1 
+	// console.log(b);   // 2
+	// console.log(c);   // 报错
+
+
+    // function fn1() {
+    //         var a = b = c = 1;
+    //     }
+    //     fn1();
+    //     console.log(c);
+    //     console.log(b);
+    //     console.log(a);
+
+
+
+    // // 第5题
+	// var a = 1;
+    //     function fn() {
+    //         var a = 2;
+    //         function fnSon(a) {
+    //             a = 3;
+    //             console.log(a);  // 1 
+    //         }
+    //         fnSon();
+    //         console.log(a);  // 3
+    //     }
+    //     console.log(a);  // 2                                                                     
+    //     fn();
+    //     console.log(a);  // 1
+
+
+
+      // 第6题
+	// var a ;
+	// function a () {
+	//     console.log('呵呵')
+	//     function a () {
+	//         a = 4;
+	//         console.log('哈哈')
+	//     }
+	//     a();
+	//     console.log(a);  
+	// }
+	// a();
+	// console.log(a);  //为什么不是underfined ？
+
+
+
+
+    // // 第7题
+	// var a = 1;
+	// function a(){
+	//     a++;
+	// }         
+	// console.log(a)  //因为 a++ 是function  内部的   所以console.log访问不到
+
+
+
+
+	//第9题
+	// var name = '白胡子';
+	// (function () {
+	//     if (typeof name === 'undefined') {
+	//         var name = '黑胡子';
+	//         console.log(name + '说感受黑暗吧');
+	//     } else {
+	//         console.log(name + '说当我的儿子吧');
+	//     }
+	// })();
+
+
+
+    //第10题
+	// function add(x, y) {
+	// 	console.log(x + y);
+	// }
+
+	// function sub(x, y) {
+	// 	console.log(x - y)
+	// }
+	// add.call(sub, 5, 3);
+
+
+
+    //第11题   
+	// (function (foo) {
+	// 	console.log(foo.bar); // 返回结果  underfined
+	// })({
+	// 	foo: {
+	// 		bar: 1
+	// 	}
+	// });
+
+
+    // 第12题
+	(function f(f) {
+		console.log(f()); // 返回结果？？？
+	})(function () {
+		return 1;
+	});
+
+    </script>
+</body>
+
+</html>

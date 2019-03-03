@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // 闭包的问题：
+    // 闭包占用的内存不会被释放的，造成内存泄漏的问题
+
+    // 内存泄漏：一块内存空间被占用了，一直得不到回收，别的对象就使用不了这块空间。
+    
+    function outer () {
+        var count = 0;
+        function fn () {
+            count++;
+            console.log("函数被调用的次数" + count);
+            
+        }
+        return fn;
+    }
+    var res = outer();
+    console.log(res);
+    res();
+
+    // 手动释放闭包占用的内存
+    res = null;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //分为简单数据类型和复杂数据类型（含有值  引用）   
+    //值类型 ： 简单类型，变量在存储简单类型的时候，储存的就是值本身
+    //引用类型 ：复杂类型，变量在储存复杂类型的时候，只会储存这个对象的地址，并不会储存对象的值。
+
+
+    //题目1
+    // var num = 11;
+    // var num2 = num;
+    // num2 = 22;
+    // console.log(num);  11
+    // console.log(num2);   22
+
+
+
+    //题目2
+    var obj = {
+        name: "zs",
+        age: 18
+    };
+    var obj2 = obj; 
+    obj2.name = "ls";
+    console.log(obj.name);   ls
+    console.log(obj2.name);   ls
+    </script>
+</body>
+</html>

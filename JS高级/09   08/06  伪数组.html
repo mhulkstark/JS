@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //常见的伪数组：arguments、document.getElementsByTagName的返回值、jQuery对象
+
+        // 给下面数组添加一个涛涛进去
+        // var arr = {
+        //     0 : '老罗',
+        //     1 : '马哥',
+        //     2 : '黑胖',
+        //     3 : '老公',
+        //     length : 4
+        // };
+        // Array.prototype.unshift.call(arr,'涛涛');  加在第一个
+        // Array.prototype.push.call(arr,'涛涛');  加在最后
+        // [].unshift.call(arr,'涛涛');   简介写法
+        // console.log(arr);
+
+
+
+        //将以下内容用 " - " 拼接起来
+
+        // var arr = {
+        //         0: '老罗',
+        //         1: '马哥',
+        //         2: '黑胖',
+        //         3: '老公',
+        //         length: 4
+        //     };
+        //    var ret = Array.prototype.join.call(arr,'-'); 
+        //    console.log(ret);
+
+
+        var arr = {
+            0: '老罗',
+            1: '马哥',
+            2: '黑胖',
+            3: '老公',
+            length: 4
+        };
+
+        var ret = Array.prototype.jion.cell(arr,'-');
+        console.log(ret);
+        
+
+
+
+        //快速得到一个数组   且内容和arr1一样
+        // var arr1 = [10,20,30,40];
+        // var arr2 = arr1.slice();
+        // console.log(arr2);
+
+
+
+        var arr = [10,20,30];
+        var arr2 = arr.slice();
+        console.log(arr2);
+         
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var obj = {
+        //     age : 10,
+        //     sex : '男',
+        //     car : ['奔驰','宝马','奥拓'],
+        // }
+        // var obj2 = {};
+        // //写一个函数的作用  ： 把一个对象的属性复制到另一个对象中去，  浅拷贝
+        // //把a对象中的所有属性复制到b中
+        // function extend (a,b) {
+        //     for(var k in a) {
+        //         b[k] = a[k];
+        //     }
+        // }
+        // extend(obj,obj2);
+        // console.log(obj2);
+        // console.log(obj);
+        
+
+
+        var obj4 = {
+            car : 'ofo',
+            age : 10,
+            sex : 'man',
+        }
+        var obj5 = {};
+ 
+        function extend (a,b) {
+            for(var k in a) {
+                b[k] = a[k]
+            }
+        }
+        extend(obj4,obj5);
+        console.log(obj5);
+        console.log(obj4);
+        
+
+
+
+
+        </script>
+</body>
+</html>

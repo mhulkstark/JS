@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 用原型的内置对象添加方法排序  从大到小 -->
+  <script>
+
+//   Array.prototype.mySort = function () {
+//       for(var i = 0; i<this.length-1; i++){
+//           for(var j = 0; j<this.length-1-i; j++){
+//               if(this[j]<this[j+1]){
+//                   var temp = this[j];
+//                   this[j] = this[j+1];
+//                   this[j+1] = temp;
+//               }
+//           }
+//       }
+//   }
+//   var arr = [100,10,23,31,78,45];
+//   arr.mySort();
+//   console.log(arr);
+     Array.prototype.mySort = function () {
+       for(var i = 0; i<this.length-1; i++) {
+         for(var j = 0; j<this.length; j++) {
+           if(this[j]<this[j+1]){
+             var temp = this[j];
+             this[j] = this[j+1];
+             this[j+1] = temp;
+           }
+         }
+       }
+     }
+     var arr = [100,20,30,25,32];
+     arr.mySort();
+     console.log(arr);
+     
+
+// // <!-- 用原型的内置对象添加方法排序  从小到大-->
+// Array.prototype.mySort = function () {
+//     for(var i = 0; i<this.length-1; i++){
+//         for(var j = 0; j<this.length-1-i; j++){
+//             if(this[j]>this[j+1]){
+//                 var temp = this[j];
+//                 this[j] = this[j+1];
+//                 this[j+1] = temp;
+//             }
+//         }
+//     }
+// }
+// var  arr = [100,10,26,85,36,46,5];
+// arr.mySort();
+// console.log(arr);
+
+
+// // 用原型的内置对象让一个字符串倒序   
+
+// String.prototype.myReverse = function () {
+//     for(var i = this.length-1; i>=0; i--){
+//       console.log(this[i]);
+//     }
+// } 
+//    var  String = 'abcdefg';
+//    String.myReverse();
+//    console.log(String);
+   
+
+
+// String.prototype.myReverse = function () {
+//   for(var i = this.length-1; i>=0; i--){
+//     console.log(this[i]);
+    
+//   }
+// }
+// var String = 'qwertyu';
+// String.myReverse();
+// console.log(String);
+
+
+
+
+  </script>
+    
+
+</body>
+</html>

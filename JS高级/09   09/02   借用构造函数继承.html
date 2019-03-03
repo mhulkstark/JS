@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     // 借用构造函数继承
+     // call apply
+
+    // function Person (name,age,gender) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.gender = gender;
+    // }
+    // function Chinese (name,age,gender,skin) {
+    //     Person.call(this,name, age,gender);    //this  weiqingchu
+    //     this.skin = skin;
+    // }
+
+    // var xmg = new Chinese('xmg',30,'man','yellow');
+    // console.log(xmg);
+    
+
+
+   function Person(name,age,gender) {
+       this.name = name;
+       this.age = age;
+       this.gender = gender;
+   }
+   function Chinese(name,age,gender,skin) {
+       this.skin = skin;
+       Person.call(this,name,age,gender)
+   }
+   var xmg = new Chinese ('xmg',18,'man','yellow')
+   console.log(xmg);
+   
+    </script>
+</body>
+</html>

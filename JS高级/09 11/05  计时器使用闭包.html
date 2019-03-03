@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包的作用：
+        // 1. 私有变量，保护数据的安全
+        // 2. 持久化维持数据
+
+        // 计数器的案例 -- 统计fn函数调用的次数
+        function outer() {
+            var count = 0;
+
+            function fn() {
+                count++;
+                console.log('打印的次数是' + count);
+
+            }
+            return fn;
+        }
+        var res = outer();
+        res();
+
+
+
+        //二
+        // function outer () {
+        //     var count = 0;
+        //     function fn () {
+        //         // console.log(x);
+        //         count ++;
+        //         console.log('被打印了的次数为' + count);
+
+        //     }
+        //     return fn;
+        // }
+        // var res = outer();
+        // res();
+
+
+        //三
+        function outer () {
+            var count = 0;
+            function fn () {
+                count ++;
+                console.log('我比调用的次数' + count);
+                
+            }
+            return fn;
+        }
+        var res = outer();
+        // console.log(res);
+        res();
+        
+    </script>
+</body>
+
+</html>

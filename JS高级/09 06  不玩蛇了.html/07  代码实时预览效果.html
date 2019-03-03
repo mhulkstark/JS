@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="txt" cols="60" rows="10"></textarea>
+    <script>
+    // 在输入框里面输入的代码可以实时作为js来执行                              
+    // 给输入框注册keyup事件
+    var txt = document.querySelector('#txt');
+    txt.addEventListener('keyup',function (){
+        // 把输入的文字作为js来执行
+        // 将可能会报错的代码，放在try-catch语句中
+        try{
+            var val = this.value;
+            var fn = new Function(val);   // val 是字符串类型
+                // 相当于：   
+                // var fn = function(){
+                    // val;
+                    // document.body.style.backgroundColor = "pink";
+                // }
+                // console.log(fn)
+                fn();
+        }catch(e) {
+
+        }
+    })
+    </script>
+</body>
+</html>

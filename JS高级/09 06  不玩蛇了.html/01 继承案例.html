@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 动物: 名字   体重  喜欢吃
+    狗：     颜色  爱咬某婷
+    二哈 ： 母 喜欢玩衣服 -->
+
+    <script>
+    //动物的构造函数
+    function Animal(name,weight) {
+        this.name = name;
+        this.weight = weight;
+    }
+    //动物的原型的方法
+    Animal.prototype.eat = function () {
+        console.log('吃啊');   
+    }
+    //狗的构造函数
+    function Dog(color) {
+        this.color = color;
+    }
+    //狗的原型方法
+    Dog.prototype = new Animal('哮天犬','50kg');
+    Dog.prototype.protect = function () {
+        console.log('看家');
+    }
+    // 哈士奇
+    function ErHa (sex) {
+        this.sex = sex;
+    }
+    ErHa.prototype = new Dog('黑色');
+    ErHa.prototype.playHost = function () {
+        console.log('玩衣服');
+    };
+    var erHa = new ErHa ();
+    // console.log(erHa.name,erHa.weight,erHa.color);
+    erHa.eat();
+    erHa.protect();
+    // erHa.playHost();
+    
+
+
+    // function  Animal(name,weight) {
+    //     this.name = name;
+    //     this.weight = weight; 
+    // }
+
+    // Animal.prototype.eat = function () {
+    //     console.log();
+        
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

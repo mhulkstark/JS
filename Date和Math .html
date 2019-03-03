@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 随机生成颜色RGB;(0到255)
+
+        // Math.random();
+        // console.log(parseInt(Math.random() * 256));
+
+        // Math.random();
+        // console.log(Math.random());
+
+        // Math.random();
+        // console.log(Math.random());
+
+
+        // Date案例
+
+        // 打印年月日
+        // new Date();
+        // console.log(new Date('2015-2-12'));
+
+
+        // new Date();
+        // console.log(new Date(2015, 1, 12));打印出来等同于2015-2-12
+
+
+        // new Date();
+        // console.log(new Date());
+
+
+
+        // 把日期转化成毫秒
+
+        // new Date('2015-5-1');
+        // console.log(+new Date('2015-5-1'));
+
+        // new Date();
+        // console.log(+new Date('2015-2-12'));
+
+
+        // var date = new Date();
+        // console.log(date.valueOf());
+        //  毫秒值转化为秒为1000
+
+
+        // 获取日期的指定部分
+        // var date = new Date();
+
+        // console.log(date.getFullYear());  年
+
+        // console.log(date.getMonth());    7月  月份从0开始一直到11结束
+
+        // console.log(date.getDate());     当前月份的第几天
+
+
+
+
+
+        //    typeof查看类型
+
+        // var num1 = 12;
+        // var num2 = 'zxc';
+        // var num3 = true;
+        // var num4 = undefined;
+        // var num5 = null;
+        // console.log(num1);
+        // console.log(num2);
+        // console.log(num3);
+        // console.log(num4);
+        // console.log(num5);
+
+
+        // 复杂类型
+        // function  num6(){
+        // };
+        //  var num7 = [];  Array
+        //  var num8 = {};  Object
+        // console.log(num6);
+        // console.log(num7);
+        // console.log(num8);
+
+
+        //  interfaceof 判断
+        // 结构  对象  instanceof   构造函数
+
+        // var arr = [];
+        // var obj = {};
+        // var fn = function (){};
+
+        // console.log(arr instanceof Array);
+        // console.log(obj instanceof Object);
+        // console.log(fn instanceof Function);
+
+        // var arr = [];
+        // var obj = {};
+        // var fn = function () {};
+        // console.log(arr instanceof Array);
+        // console.log(obj instanceof Object);
+        // console.log(fn instanceof Function);
+
+
+
+
+        //  constructor.name 查找构造函数
+        // var arr = [];
+        // var obj = {};
+        // var fn = function (){};
+        // console.log(arr.constructor.name);  Array
+        // console.log(fn.constructor.name);    Function
+        // console.log(obj.constructor.name);  Object
+
+
+
+        // 1. 学生对象
+        // name : 张三  age: 18岁 打招呼:大家好我是张三
+
+        // function Student(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // var stt = new Student('kobe',38);
+        // console.log(stt);
+
+        // function Teacher(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // var europe = new Teacher('jinoubili',41);
+        // console.log(europe);
+
+        // function Wokao(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        //     // this.color = color;
+        // }
+        //  var foot = new Wokao('fhsjf',18);
+        //  console.log(foot);
+
+
+
+        // name : 马哥  学习 : 马哥正在学前端
+        // function hero(name){
+        //     var teacher = {};
+        //     teacher.name = name ;
+        //     teacher.Sayhi = function(){
+        //         console.log('大家好，我是' +this.name);
+
+        //     }
+        //     return teacher;
+        // }
+        // var teacher = hero('xmg');
+        // teacher.Sayhi();
+
+
+        // name : 马哥  学习 : 马哥正在学前端
+        // function mg(name){
+        //     var laoma = {};
+        //     laoma.name = name;
+        //     laoma.Sayhello = function(){
+        //         console.log('大家好，我是' +this.name);
+
+        //     }
+        //     return laoma;
+        // }
+        // var laoma = mg('xmg');
+        // laoma.Sayhello();
+
+
+
+
+        // var obj = {};  //对象
+        // for (var i = 0; i < 10; i++) {
+        // 		obj[i] = i * 2;
+        // }
+
+        // for(var key in obj) {
+        // 	console.log(key + "==" + obj[key]);
+        // }
+
+
+
+        // ###判断一个属性是否是对象的一个属性
+        // if (属性名  in  对象) { .. }
+
+        //  var obj = {
+        //      name: 'zs',
+        //  }
+        // if('name' in obj){
+        //     console.log('是');
+
+        // }
+
+
+        // 变量存储数据的时候，存储的直接就是这个值本身。
+        // var num = 11;
+        // var num1 = num;
+        // num = 20;
+        // console.log(num);  
+        // console.log(num1);
+
+
+
+
+        // 练习:
+
+        // var obj = {
+        //   name:"zs",
+        //   age:18
+        // }
+
+        // var obj1 = obj;
+        // obj1.name = "ls";
+        // console.log(obj.name);  //ls  
+        // console.log(obj1.name);  //ls
+
+
+
+
+        // function fn(a, b) {
+        //   a = a + 1;
+        //   b = b + 1;
+        //   console.log(a);   11
+        //   console.log(b);  21
+        // }
+
+        // var x = 10;
+        // var y = 20;
+        // fn(x, y);
+        // console.log(x);  10
+        // console.log(y);   20
+
+
+
+
+        // var p = {
+        //   name:"zs",
+        //   age:18
+        // }
+        // function fn(person) {
+        //   person.name = 'ls';
+        //   console.log(person.name);   
+        // }
+        // fn(p);
+        // console.log(p.name);
+
+
+
+        // function Person(name, age, salary) {
+        //    this.name = name;
+        //    this.age = age;
+        //    this.salary = salary;
+        //  }
+
+        //  function f1(person) {
+        // //    var person = p;
+        //    person.name = "ls";
+        //    console.log(person.name);    
+        //  }
+
+        //  var p = new Person("zs", 18, 1000);
+        //  console.log(p.name);//   zs
+        //  f1(p);
+        //  console.log(p.name);//       
+
+
+
+        //4.
+        // function Person(name, age, salary) {
+        //    this.name = name;
+        //    this.age = age;
+        //    this.salary = salary;
+        //  }
+        //  function f1(person) {
+        //     //  var person = p;
+        //    person.name = "ls";
+        //    person = {
+        //      name : 'zs'
+        //    }
+        //    console.log(person.name);  
+        //  }
+        //  var p = new Person("zs", 18, 1000);//创建一个新对象
+        //  console.log(p.name);//   
+        //  f1(p);
+        //  console.log(p.name);//    
+
+
+
+        //  Math对象
+
+        // console.log(Math.PI);
+
+
+        // 最大值/最小值
+
+        // console.log(Math.max(1,3,5));  最大值
+
+        // console.log(Math.min(-2,3,8));   最小值
+
+        //    取整（★）
+        //   [1.1 , 1.9,  -1.1 , -1.9  ,  1.5]
+
+        // console.log(Math.ceil(1.1));  向上取整
+
+
+        // console.log(Math.floor(2.9));  //向下取整
+
+
+        //四舍五入，如果是.5，则取更大的那个数
+
+        // console.log(Math.round(3.5));
+
+        // console.log(Math.round(-4.5));
+
+
+        // 随机数（★★）
+
+        // console.log(Math.random());  可以取到0   但是取不到1
+
+        // 绝对值    (abs absolute 绝对)
+
+        // console.log(Math.abs(-100));
+
+
+        // 次幂和平方    (pow power 幂   sqrt:开方 )
+
+        // console.log(Math.pow(2,3));  8
+        // console.log(Math.pow(3,2));  9
+
+        // console.log(Math.sqrt(9));  
+        // console.log(Math.sqrt(8));
+
+        //1.   0-3  [0,3)
+        // console.log(Math.random() * 3); 
+
+        //     0-6  [0,6)
+        // console.log(Math.random() * 6);
+
+        //     6-8  [6,8)   把6化成0
+        // console.log(Math.random() * 2 + 6);
+
+
+
+        //    随机整数  0到3
+
+        // console.log( parseInt (Math.random() * 4));
+        // console.log( Math.floor (Math.random() * 4));
+
+
+        //2.封装一个函数 随机生成一个rgb颜色
+
+        // function randomRGB(){
+        //     var red = parseInt(Math.random() * 256);
+        //     var green = parseInt(Math.random() * 256);
+        //     var blue = parseInt(Math.random() * 256);
+        //     return 'rgb(' + red + ',' + green + ',' + blue + ')';
+        // }
+        //   var res = randomRGB();
+        //   console.log(res);
+
+        //    function color(){
+        //        var r = parseInt(Math.random() *256);
+        //        var g = parseInt(Math.random() *256);
+        //        var b = parseInt(Math.random() *256);
+        //        return 'rgb(' + r + ',' + g + ',' + b + ')';
+        //    }
+        //    var res = color();
+        //    console.log(res);
+
+        //    function qwer(){
+        //        var r = parseInt(Math.random() *256);
+        //        var g = parseInt(Math.random() *256);
+        //        var b = parseInt(Math.random() *256);
+        //        return 'rgb(' + r +',' + g + ',' + b + ')';
+        //    }
+        //   var res = qwer();
+        //   console.log(res);
+
+
+
+
+        //2.冒泡排序
+
+        // var arr = [12,8,3,20,5];
+        // function newArr(arr){
+        //     for(var i = 0; i <arr.length; i++){
+        //         for(var j = 0; j<arr.length; j++){
+        //             if(arr[j]>arr[j+1]){
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j+1];
+        //                 arr[j+1] = temp;
+
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        //   var res = newArr(arr);
+        //   console.log(res);
+
+
+        //  用函数封装冒泡
+        // var  arr = [8,13,25,2,4,9,32];
+        // function getArray(arr){
+        //     for(var i = 0; i < arr.length-1; i++){
+        //         for(var j = 0; j<arr.length-1-i; j++){
+        //             if(arr[j]>arr[j+1]){  
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j+1];
+        //                 arr[j+1] = temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // var res = getArray(arr);
+        // console.log(res);
+
+
+
+        // 九九乘法表
+        // for(var i = 1; i<=9; i++){
+        //     for(var j = 1; j<=i; j++){
+        //         document.write(j + '*' + i + '=' + j * i + ' ');
+        //     }
+        //     document.write('<br>');
+        // }
+
+        // console.log(i);
+
+
+
+
+        // 九九乘法表
+        // for(var i = 1; i <=9; i++){
+        //     for(var j = 1; j <=i; j++){
+        //         document.write(i + '*' + j + '=' + i * j + '');
+        //     }
+        //     document.write('<br>');
+        // }
+        // console.log(i);
+
+
+
+
+
+        //第二遍
+
+        // 随机生成颜色RGB;(0到255)
+        // Math.random();
+        // console.log(parseInt(Math.random() * 256));
+
+
+
+        // Date案例
+
+        // 打印年月日
+        // new Date();
+        // console.log(new Date('2018-09-26')); //等同于下面的写法
+        // console.log(new Date(2018,08,26));
+
+
+        // 把日期转化成毫秒
+        // new Date('2015-5-1');
+        // console.log(+new Date ('2018-09-26'));
+
+
+        // 获取日期的指定部分
+        // var date = new Date();
+        // console.log(date.getFullYear());  年
+        // console.log(date.getMonth());   7月  月份从0开始一直到11结束
+        // console.log(date.getDate());   当前月份的第几天
+
+
+        //    typeof查看类型
+
+        // var num1 = 12;
+        // var num2 = 'zxc';
+        // var num3 = true;
+        // var num4 = undefined;
+        // var num5 = null;
+        // console.log(typeof(num1)); 
+        // console.log(typeof(num2)); 
+        // console.log(typeof(num3)); 
+        // console.log(typeof(num4)); 
+        // console.log(typeof(num5));  //object
+
+
+        // 复杂类型
+        // function  num6(){
+        // };
+        //  var num7 = [];  
+        //  var num8 = {}; 
+        // console.log(num6);  //function
+        // console.log(num7);  //Array
+        // console.log(num8)   //Object
+
+
+        //  interfaceof 判断
+        // 结构  对象  instanceof   构造函数
+
+        // var arr = [];
+        // var obj = {};
+        // var fn = function () {};
+        // console.log(arr instanceof Array);
+        // console.log(obj instanceof Object);
+        // console.log(fn instanceof Function);
+
+
+        //  constructor.name 查找构造函数
+
+        // var arr = [];
+        // var obj = {};
+        // var fn = function () {};
+        // console.log(arr.constructor.name);   Array
+        // console.log(obj.constructor.name);   Object
+        // console.log(fn.constructor.name);    Function
+
+
+        // 1. 学生对象
+        // name : 张三  age: 18岁 打招呼:大家好我是张三
+
+        // function Student(name,age) {
+        //     this.name = name,
+        //     this.age = age
+        //     sayHi = function () {
+        //         console.log('大家好,' + this.name);
+
+        //     }
+        //     return sayHi;
+        // }
+        // var stt = new Student('kobe',38)
+        // sayHi();
+        // console.log(stt);
+
+
+        // function Student (name,age) {
+        //     this.name = name;
+        //     this,age = name;
+        //     Student.sayHi = function () {
+        //         console.log('大家好,' + this.name);
+
+        //     }
+        //     return Student.sayHi;
+        // }
+        // var stu = Student('kobe',38);
+        // // console.log(stu);
+        // Student.sayHi()
+
+        // function uzi(name,age) {
+        //     var wuzi = {};
+        //     wuzi.name = name;
+        //     wuzi.age = age;
+        //     wuzi.sayHi = function () {
+        //         console.log('大家好，我是' + this.name + ',' + '我今年' + this.age);
+
+        //     }
+        //     return wuzi;
+        // }
+        // var wuzi = uzi ('简字豪',20);
+        // wuzi.sayHi();
+
+
+
+        // name : 马哥  学习 : 马哥正在学前端
+        // function  hero (name) {
+        //     var teacher = {};
+        //     teacher.name = name;
+        //     teacher.sayHi = function () {
+        //         console.log('大家好，我是' +this.name);
+
+        //     }
+        //     return teacher;
+        // }
+        // var teacher = hero ('xmg');
+        // // console.log(teacher);
+        // teacher.sayHi();
+
+
+        // var obj = {};  //对象
+        // for(var i = 0; i<10; i++){
+        //     obj[i] = i*2;
+        // }
+        // console.log(obj);
+        // for(var k in obj) {
+        //     console.log(k + "==" + obj[k]);
+
+        // }
+
+
+        // ###判断一个属性是否是对象的一个属性
+        // if (属性名  in  对象) { .. }
+
+        // var obj = {
+        //     name: 'zs',
+        // }
+        // if ('age' in obj) {
+        //     console.log('是');
+
+        // } else {
+        //     console.log('扫一扫吧');
+
+        // }
+
+
+        // 变量存储数据的时候，存储的直接就是这个值本身。
+
+        // var num = 11;
+        // var num1 = num;
+        // num = 20;
+        // console.log(num);   20
+        // console.log(num1);   11
+
+        // var obj = {
+        //   name:"zs",
+        //   age:18
+        // }
+
+        // var obj1 = obj;
+        // obj1.name = "ls";
+        // console.log(obj.name);  
+        // console.log(obj1.name); 
+
+        // function fn(a, b) {
+        //   a = a + 1;
+        //   b = b + 1;
+        //   console.log(a);   11
+        //   console.log(b);  21
+        // }
+
+        // var x = 10;
+        // var y = 20;
+        // fn(x, y);
+        // console.log(x);   10
+        // console.log(y);   20
+
+
+        //  function Person(name, age, salary) {
+        //            this.name = name;
+        //            this.age = age;
+        //            this.salary = salary;
+        //          }
+        //          function f1(person) {
+        //              var person = p;
+        //            person.name = "ls";
+        //            person = {
+        //              name : 'zs'
+        //            }
+        //            console.log(person.name);  
+        //          }
+        //          var p = new Person("zs", 18, 1000);//创建一个新对象
+        //          console.log(p.name); 
+        //          f1(p);
+        //         console.log(p.name);
+
+
+
+        //1.   0-3  [0,3)
+        // console.log(Math.random() * 3);
+
+        //     0-6  [0,6)
+        // console.log(Math.random() * 6);
+
+        //     6-8  [6,8)   把6化成0
+        // console.log(Math.random() * 6);
+
+        //    随机整数  0到3
+        // console.log(parseInt (Math.random () * 4));
+        // console.log(parseInt (Math.random () *4));
+
+
+        //2.封装一个函数 随机生成一个rgb颜色
+        // function randomRGB () {
+        //     var red = parseInt(Math.random () * 256);
+        //     var blue = parseInt(Math.random () * 256);
+        //     var green = parseInt(Math.random () * 256);
+        //     return 'rgb(' + red + "," + blue + "," + green + ')';
+        // }
+        // var res = randomRGB();
+        // console.log(res);
+
+
+        //2.冒泡排序
+    //     var arr = [3, 1, 16, 8, 5, 29, 39, 17];
+    //     function newArr(arr) {
+    //         for (var i = 0; i < arr.length; i++) {
+    //             for (var k = 0; k < arr.length; k++) {
+    //                 if (arr[k] > arr[k + 1]) {
+    //                     var temp = arr[k];
+    //                     arr[k] = arr[k + 1];
+    //                     arr[k + 1] = temp;
+    //                 }
+    //             }
+    //         }
+    //         return arr;
+    //     }
+    //    var res = newArr (arr);
+    //    console.log(res);
+       
+
+
+// 九九乘法表
+// for(var i = 1; i<=9; i++){
+//     for(var j = 1; j<=i; j++){
+//         document.write(i + '*' + j + '=' + i * j + ' ')
+//     }
+//     document.write('<br>')
+// }
+// console.log(i);
+
+
+
+// var arr = [1,1,5,6,14,14,25,32,32];
+// var newArr = [... new Set(arr) ]
+// console.log(newArr);
+
+
+
+
+       
+    </script>
+</body>
+
+</html>

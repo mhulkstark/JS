@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 任意一个对象，都会有__proto__属性，这个属性指向了构造函数的prototype属性，也就是原型对象。
+    Person = function () {
+
+    }
+    function Person () {
+
+    }
+         var p = new Person;
+         console.log(p.constructor == Person);  //true
+         console.log(p.constructor == Person.prototype.constructor);  //true 
+         console.log(Person.prototype.__proto__);  //Object
+
+         console.log(Person.prototype == p.__proto__);  //true
+         console.log(p.constructor == Person.prototype.constructor);  //true 
+         
+
+        // function Person (name, age) {
+        // this.name = name
+        // this.age = age
+        // }
+
+        // console.log(Person.prototype)   // Object
+
+
+        // 自定义构造函数
+        // function Objk () {
+            
+        // }
+        // var o = new Objk();
+
+        // console.log(o.__proto__);
+        // console.log(o.__proto__.__proto__.__proto__);
+        
+        function Objk () {
+
+        }
+        var o = new Objk();
+        console.log(o.__proto__);
+        console.log(o.__proto__.__proto__.__proto__);
+        
+
+    </script>
+</body>
+</html>

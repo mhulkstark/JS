@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 变量在提升的时候  只提升变量名  而值不会提升
+    // 函数优先提升
+   
+
+    // // //题目1
+    // var a;
+    // console.log(a); 
+    // var a = 100;
+
+    // var a;
+    // console.log(a);
+    // a = 100;
+  //  题目2
+    // function a() {
+    //     console.log('我是函数');
+    // }
+    // console.log(a);
+    // var a = 10;
+    // console.log(a);
+
+
+
+    // //预解析后
+    // function a() {
+    //     console.log('我是函数');
+    // }
+    // // var a;
+    // console.log(a);
+    // a = 10;
+    // console.log(a);
+    
+
+
+    
+    //题目3
+    // var a;
+    // console.log(a);
+    // var a = 10;
+    // var a = function () {
+    //     console.log('我是函数');
+    // }
+    // console.log(a);
+
+
+
+    //预解析之后
+    // var a;
+    var a;
+    // var a;
+    console.log(a);
+    a = 10;
+    a = function () {
+        console.log('我是函数');
+    }
+    console.log(a);
+
+
+    </script>
+</body>
+</html>

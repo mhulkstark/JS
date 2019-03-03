@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+   <!-- <style>
+   .red{
+       background-color: red;
+   }
+  .green{
+      background-color: green;
+  }
+   </style>
+    <button id="btn">点击按钮</button>
+    <ul>
+        <li>隔行换色</li>
+        <li>隔行换色</li>
+        <li>隔行换色</li>
+        <li>隔行换色</li>
+        <li>隔行换色</li>
+        <li>隔行换色</li> 
+    </ul>
+         <!--  需要: 点击按钮, 把第一个ul里面的li 隔行变色 -->
+<!-- <script>
+var btn = document.getElementById("btn");
+var lis = document.getElementsByTagName("li");
+  btn.onclick=function () {
+      for(var i = 0; i<lis.length; i++){
+          if(i%2 ==0){
+             lis[i].className = "red";
+          }else{
+              lis[i].classList = "green";
+          }
+      }
+  }
+</script> -->
+
+
+
+<style>
+    .red{
+        background-color: red;
+    }
+    .green{
+        background-color: green;
+    }
+</style>
+        <!-- 间距换色 -->
+<button id="btn">点击按钮</button>
+<ul id="ul">
+    <li>听说每一行颜色都不同?</li>
+    <li>听说每一行颜色都不同?</li>
+    <li>听说每一行颜色都不同?</li>
+    <li>听说每一行颜色都不同?</li>
+    <li>听说每一行颜色都不同?</li>
+    <li>听说每一行颜色都不同?</li>
+    <li>听说每一行颜色都不同?</li>
+</ul>
+<script>
+var btn = document.getElementById("btn");
+var ul = document.getElementById("ul");
+var lis = ul.getElementsByTagName("li");
+btn.onclick=function () {
+  for(var i = 0; i<lis.length; i++){
+      if(i%2 ==0){
+        lis[i].className="red";
+      }else{
+          lis[i].className="green";
+      }
+  }
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

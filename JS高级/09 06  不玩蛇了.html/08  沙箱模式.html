@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 沙箱模式
+    // 是一个独立和封装的环境，内部的代码是不会影响到外部的
+    
+    // 自调用函数：创建了一个函数，同时调用了这个函数
+    // 语法：
+    /*(function(window){
+    // 以后的代码都写在这里面
+    })(window)*/
+
+    (function (window){
+    var num = 10;
+    function niubi () {
+
+    }
+     
+    function fn1 () {
+        console.log('f1');
+        
+    } 
+
+    function fn2 () {
+        console.log('f2');
+        
+    }
+    function fn3 () {
+        console.log(('f3'));
+        
+    }
+    fn1();
+    fn2();
+    // fn3();
+    window.fn3 = fn3
+    })(window)
+    fn3();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // (function(window){
+    //     var num = 10;
+    //     function niubi () {
+
+    //     }
+    //     function fn1 () {
+    //         console.log('f1');
+            
+    //     }
+    //     function fn2 () {
+    //         console.log('f2');
+            
+    //     }
+    //     function fn3 () {
+    //         console.log(('f3'));
+            
+    //     fn1();
+    //     fn2();
+    //     }
+    //     window.fn3 = fn3;
+    // })(window)
+    // fn3();
+    </script>
+</body>
+</html>

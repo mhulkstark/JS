@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //bind()方法创建一个新的函数, 可以绑定新的函数的this指向
+
+    // 语法： var fn2 = fn.bind(thisArg);
+    // 作用： bind会创建并返回一个新的函数， 新的函数和借用的函数是一模一样的, 但是新函数内的this已经被固定了bind的参数thisArg
+    // 也就是说，无论fn2是何种调用模式，this已经被固定了bind的参数thisArg
+
+    function fn () {
+        console.log('1234');
+        console.log(this);   //此处this指向windows
+        
+    };
+    var fn2 = fn.bind([1,2,3]);
+    console.log(fn2);
+
+    
+
+
+//    var xmg = {
+//        name : 'xmg',
+//        lover : '斯嘉丽 约翰逊',
+//        sayLove : function () {
+//            var fn = function () {
+//                console.log(this.lover + ', 你爱' + this.name + '吗？？？？？？');
+               
+//            }.bind(this);
+//            setInterval(fn,1000)
+//        }
+//    }
+//    xmg.sayLove();
+
+
+    </script>
+</body>
+</html>

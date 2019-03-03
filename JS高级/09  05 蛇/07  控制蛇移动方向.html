@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #map{
+            width: 1200px;
+            height: 800px;
+            background-color: #ccc;
+            margin: 50px auto;
+            /*里面蛇和食物要根据地图来进行定位*/
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="../food.js/20.food.js"></script>
+    <script src="snake.js"></script>
+    <script>
+    // 地图元素
+    var map = document.querySelector('#map');
+    
+    // 游戏对象（裁判）-- 决定游戏开始和游戏结束
+        //  游戏对象应该管理着和游戏相关的所有的对象（蛇对象，食物对象）
+        //  属性：
+        //     蛇对象
+        //     食物对象
+        //  方法：
+        //      游戏结束：  gameOver
+        //      游戏开始：  startGam
+    function Game () {
+        this.snake = new Snake();
+        this.food = new Food();
+    }
+    Game.prototype.startGame = function () {
+        this.snake.render(map);
+        this.food.render(map);
+        var that = this;
+    // 开定时器，让蛇跑起来
+            // this的问题：
+            //  1. 任何函数都有自己的this
+            //  2. 定时器的函数是被window给调用的，函数内的this指向了window
+    
+    var timerId = setInterval(function (){
+        
+          that.snake.move(map,that.food)
+
+          // 蛇撞墙的逻辑：
+                // 检测什么？ 蛇头的坐标和四面墙的关系
+    var head = that.snake.body[0];
+    if(head.x < 0 || head.y < 0 || head.x > map.offsetWidth/that.snake.width - 1 || head.y > map.offsetHeight/that.Snake.height - 1){
+        alert('you are rubbish');
+        clearInterval(timerId);
+        }            
+      },100)
+      // 绑定键盘事件-让蛇的移动方向发生改变
+      document.addEventListener('keyup',function(e){
+          switch(e.keyCode){
+              case 37 :
+              that.Snake.direction = 'left';
+              break;
+              case 38 :
+              that.Snake.direction = 'up';
+              break;
+              case 39 :
+              that.Snake.direction = 'right';
+              break;
+              case 40 :
+              that.Snake.direction = 'down';
+              break;
+          };
+      })
+    }
+    var g = new Game();
+    g.startGame();
+    
+    </script>
+</body>
+</html>

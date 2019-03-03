@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //  var chenge = {
+    //      money : 12000,
+    //      handsome : 'shuaiqi'
+    //  }
+    // // console.log(chenge.__proto__);  
+    // var lg = {
+    //     beauty : 'yaode',
+    //     height : 170
+    // }     
+    // var xmg = {
+    //     car : 'ofo'
+    // }
+    //     // extend   ==>  拓展
+    //     // 给我传一个对象，就拷贝这个对象的所有属性和方法
+    //     // 给对象自身添加的extend方法，还可以把方法添加给原型
+    // Object.prototype.color = 'blue';  
+    // Object.prototype.long = 18;
+
+    // // 往xmg的原型上添加extend方法，（Object.prototype)
+    // Object.prototype.extend = function (obj) {
+    //     for(var k in obj){
+    //         if(obj.hasOwnProperty(k)){
+    //             this[k] = obj[k];
+    //         }
+    //     }
+    // }
+    // xmg.extend(lg);
+    // console.log(xmg);
+    // console.log(chenge.money);
+    // console.log(chenge.color);
+    // console.log(chenge.long);
+
+
+var xmg = {
+    long : 8
+}
+var chenge = {
+    money : 12000,
+    car : 'ofo'
+}
+var lg = {
+    beauty : 'yaode',
+    height : 170
+}
+
+Object.prototype.color = 'red';
+Object.prototype.extend = function (obj) {
+    for(var k in obj){
+        if(obj.hasOwnProperty (k)) {
+            this[k] = obj[k]
+        }
+    }
+}
+lg.extend(chenge);
+console.log(lg);
+console.log(lg.money);
+
+// var chenge = {
+//     money : 12000,
+//     car : 'ofo',
+// }
+
+// var lg = {
+//     beauty : 'yaode',
+//     height : 170,
+// }
+
+// var xmg = {
+//     long : 8
+// }
+
+// Object.prototype.color = "green";
+
+// Object.prototype.extend = function (obj) {
+//     for(var k in obj) {
+//         if(obj.hasOwnProperty(k)) {
+//             this[k] = obj[k];
+//         }
+//     }
+// }
+// xmg.extend(chenge);    //xmg  继承  chenge  
+// console.log(xmg);
+// console.log(xmg.money);
+// console.log(xmg.car);
+
+// console.log(xmg.color);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var mouting = {
+    //     color : 'red',
+    //     weight : 96
+    // }
+    // var you = {
+    //     car : 'msld'
+    // }
+    // Object.prototype.color = 'red';
+    // Object.prototype.car = 'msld';
+    // Object.prototype.extend = function () {
+    //     for(var k in obj) {
+    //        if(hasOwnProperty(k)) {
+    //            this[k] = obj[k];
+    //        }
+    //     }
+    // }
+    // you.extend(mouting);
+    // console.log(you);
+    
+    </script>
+</body>
+</html>

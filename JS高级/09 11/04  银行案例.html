@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // function kaihu () {
+    //     var money = 0;
+    //     function saveMoney (name,num) {
+    //         money +=num;
+    //         console.log("顾客你好" + "你的余额为" + money);
+            
+    //     }
+    //     function getMoney (name,num) {
+    //         money -=num;
+    //         console.log("顾客你好" + "你的余额为" + money);
+            
+    //     }
+    //     return {
+    //         saveMoney : saveMoney,
+    //         getMoney : getMoney,
+    //     }
+    // }
+    // var xmg = kaihu();
+    // xmg.saveMoney('xmg',12000);
+
+    // var lg = kaihu();
+    // lg.getMoney('lg',5000);
+    // lg.saveMoney('lg',500000);
+
+
+
+
+    //二
+
+    // function outer() {
+    //     var money = 0;
+
+    //     function saveMoney (name,num) {
+    //         money +=num;
+    //         console.log(money);
+            
+    //     }
+    //     function getMoney (name,num) {
+    //         money -=num;
+    //         console.log(money);
+            
+    //     }
+    //     return {
+    //         saveMoney : saveMoney,
+    //         getMoney : getMoney,
+    //     }
+    // }
+    // var xmg = outer();
+    // xmg.saveMoney('xmg',15000);
+
+    // var lg = outer();
+    // lg.saveMoney('lg',2000);
+
+
+
+
+//三
+
+function kaihu() {
+    var money = 0;
+    function saveMoney (name,num) {
+      money += num;
+      console.log('顾客你好，你的余额是' + money);
+    }
+    function getMoney (name,num) {
+        money -= num;
+        console.log('顾客你好，你的余额是' + money);
+    }
+    return{
+        saveMoney:saveMoney,
+        getMoney:getMoney
+    }
+}
+var lg = kaihu();
+lg.saveMoney('lg',15000)
+
+var xmg = kaihu();
+xmg.getMoney('xmg',18000)
+
+
+
+    //四
+// function kaihu () {
+//     var money = 0;
+//     function saveMoney (name,num) {
+//         money +=num;
+//         console.log('你好啊，你要努力赚钱啊' + money);
+        
+//     }
+//     function getMoney (name,num) {
+//         money -=num;
+//         console.log('oooooooooo');
+        
+//     }
+//     return{
+//         saveMoney : saveMoney,
+//         getMoney : getMoney
+//     }
+// }
+// var lg = kaihu ();
+// lg.saveMoney('lg',15000)
+
+
+// var xmg = kaihu ();
+// xmg.getMoney('xmg',20000)
+    </script>
+</body>
+</html>

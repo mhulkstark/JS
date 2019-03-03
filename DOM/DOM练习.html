@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+ <!-- 点击按钮，  修改P标签的内容 -->
+
+    
+         <!-- 总结此类形式的方法 -->
+
+    <!-- <input type="button" value="设置P的内容" id="btn"/>
+    <p id="p1">我是一个P标签</p> -->
+    
+ 
+
+<!-- <button id="btn" >哈哈哈</button>
+<p id=p1>这是一个P标签</p> -->
+
+
+<button id="btn">嘻嘻嘻</button>
+<p id="p2">这就是一个P</p>
+
+<script>
+    //    方法  凡是成对的标签 ， 中间的文本内容 ，设置的时候 ，都使用 innerText这个属性的方式
+
+    //    根据id获取按钮 ， 为按钮注册点击事件 ， 添加事件处理函数
+
+//     document.getElementById("btn").onclick=function () {
+//     // 根据id获取p标签  设置内容
+
+//     document.getElementById("p1").innerText = "这是一个P";
+// };
+
+    
+// document.getElementById("btn").onclick=function () {
+//     document.getElementById("p1").innerText = "这就是一个P";
+// };
+
+document.getElementById("btn").onclick=function () {
+    document.getElementById("p2").innerText = "啦啦啦啦"
+};
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

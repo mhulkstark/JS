@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>                                      
+<body>
+    <script>
+        //上下文调用模式也叫方法借用模式，分为apply与call
+     
+        //call方式借用
+    //     var chenge = {
+    //         name : '翁哥',
+    //         car : 'ofo',
+    //         // color : 'green',
+    //         liaomei : function () {
+    //             console.log('妹子，我是' + this.name +
+    //             ', 我有' + this.car + ', 走吧，哥哥带你回家' 
+    //             + this.color);
+                
+    //         }
+    //     }
+       
+    // //    chenge.liaomei();
+    //    var xmg = {
+    //        name : '马牛逼',
+    //        car : 'mobile',
+    //        color : 'green'
+    //    }
+    //    // 让xmg去借用chenge的撩妹技能
+    //    chenge.liaomei.call(xmg)  
+      
+
+    //call调用
+    var chenge = {
+        name : 'chenge',
+        car : 'ofo',
+        liaomei : function () {
+            console.log('类好啊，我是' + "," + this.name 
+            + '我碎魂你哎' + '我有'+ 'cao');
+            
+        }
+    }
+    var xmg = {
+        name : '马牛逼',
+        car : 'mobile',
+        color : 'green'
+    }
+
+    //让xmg去调用chenge的撩妹技能
+    chenge.liaomei.call(xmg)
+    
+    </script>
+</body>
+</html>

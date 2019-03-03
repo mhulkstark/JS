@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    //需求：统计一个函数的调用次数
+    function outer () {
+        var count = 0;
+        function fn() {
+            count++;
+            console.log('调用次数' + count +'次数');
+            
+        }
+        return fn;
+    }
+    var res = outer();
+    res();
+
+
+
+   var count = 0;
+   function fn() {
+       count ++;
+       console.log('调用次数' + count + '次数');
+       
+   }
+   return fn;
+
+ 
+    // var count = 0;
+    // function fn () {
+    //     count++;
+    //     console.log("我被调用了" + count + "次数");
+        
+    // } 
+    // fn(); //缺点  count是全局变量 不安全  可以使用闭包解决问题
+    
+
+//    function outer () {
+//        var count = 0;
+//        function fn () {
+//         count ++;
+//         console.log("我被调用了" + count + "次数");
+        
+//        }
+//      return fn;
+//    }
+//     var res = outer();
+//     res();
+    </script>
+</body>
+</html>

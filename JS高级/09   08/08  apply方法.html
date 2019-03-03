@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1. 求数组的最大值和最小值
+    //最大值
+    // var arr1 = [10,20,2,850,12,45];
+    // var arr2 = Math.max.apply(arr1,arr1);
+    // console.log(arr2);
+    
+    var arr1 = [5,23,16];
+   
+    var arr3 = Math.max.apply(arr1,arr1)
+    console.log(arr3);
+    
+    // //最小值
+    // var arr3 = [10,20,2,850,12,45];
+    // var arr4 = Math.min.apply(arr3,arr3);
+    // console.log(arr4);
+    
+    // //2. 封装一个函数，能够打印出来所有的参数。
+    // function qwe(arg) {
+    //     console.log.apply(console,arguments);
+        
+    // }
+    // console.log('哈哈','嘻嘻','呵呵');
+
+    function qwe(arg) {
+        console.log(console,arguments);
+        
+    }
+    console.log('haha','gjs');
+    
+    // 需求： 在每次打印的时候，默认在打印的文字前面加上指定的字符串： "大翁哥友情提示："
+   
+    function q () {
+        Array.prototype.unshift.call(arguments,'提示下啊');
+        console.log.apply(console,arguments);
+        
+    }
+    q('dafsf');
+    q('tegfd')
+
+    // function qwer () {
+    //     Array.prototype.unshift.call(arguments,'翁哥友情提示: 不要追他的老公');
+    //     console.log.apply(console,arguments);
+    // };
+    // qwer('哈哈','嘻嘻');
+    // qwer('哈哈','嘻嘻','呵呵');
+    
+    </script>
+</body>
+</html>

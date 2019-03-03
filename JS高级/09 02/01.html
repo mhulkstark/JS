@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 克隆节点 -->
+     <div>
+         <p>马哥走了就没有人说陈老师了</p>
+     </div>
+     <script>
+    // 深拷贝
+    var div = document.querySelector('div');
+    var newNode1 = div.cloneNode(true);
+    console.log(newNode1);
+    
+
+
+    //  浅拷贝
+    var div = document.querySelector('div');
+    var newNode2 = div.cloneNode(false);
+    console.log(newNode2);
+    
+     </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #map{
+        width: 1200px;
+        height: 800px;
+        background-color: #ccc;
+        margin: 50px auto;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="snake.js"></script>
+    <script src="../food.js/20.food.js"></script>
+    <script>
+    var map = document.querySelector('#map');
+    // 游戏对象（裁判）-- 决定游戏开始和游戏结束
+        //  游戏对象应该管理着和游戏相关的所有的对象（蛇对象，食物对象）
+        //  属性：
+        //     蛇对象
+        //     食物对象
+        //  方法：
+        //      游戏结束：  gameOver
+        //      游戏开始：  startGame
+    
+    function Game () {
+        this.snake = new Snake ();
+        this.food = new Food ();
+    }
+    Game.prototype.starGame = function () {
+        this.snake.render(map);     // 调用蛇的render方法，将蛇渲染添加到地图上
+        this.food.render(map);
+        var that = this;    // 把this的指向赋值给了that
+        // 开定时器，让蛇跑起来
+            // this的问题：
+            //  1. 任何函数都有自己的this
+            //  2. 定时器的函数是被window给调用的，函数内的this指向了window
+
+            var timerId = setInterval(function (){
+                  that.snake.move(map,that.food);   // 让蛇动起来
+
+                  // 蛇撞墙的逻辑：
+                // 检测什么？ 蛇头的坐标和四面墙的关系
+                var head = that.snake.body[0];
+                if(head.x < 0 || head.y <0 || head.x > map.offsetWidth/that.snake.width - 1 || head.y > map.offsetTop/that.snake.height - 1){
+                    // 蛇头撞到了左边的或者是上边的墙
+                    alert('you are rubbish');
+                    // 清定时器
+                    clearInterval(timerId);
+                }
+            },100)
+            // 蛇撞墙的逻辑：
+            //  需要在蛇每移动一次就需要判断检测一次，代码逻辑需要写在定时器里面，而且是在move之后。
+    }
+    
+    var g = new Game();
+    console.log(g);
+    g.starGame();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

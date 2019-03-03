@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    //1. js中使用 typeof 能得到的类型有哪些?
+     
+    //数据类型有哪些：
+	//简单数据类型 又称为值类型 number string boolean undefined null
+	//复杂数据类型 object (JS中一切皆对象 除了值类型)
+
+    console.log(typeof underfined);    //underfined
+
+    console.log(typeof null);          // null
+
+    console.log(typeof 123);           // number
+
+    console.log(typeof 'ASD');         // String  
+
+    console.log(typeof false);         //  boolean
+
+    console.log(typeof ({}));          // object   // console.log(typeof {}); //object
+
+    console.log(typeof ([]));          // object    // console.log(typeof []); //object
+
+    console.log(typeof []);            // object     // console.log(typeof null); //object
+	
+    console.log(typeof(Function));     //function
+
+    console.log(typeof console.log);   // function
+    
+     function fn() {
+
+	 }
+	 console.log(typeof fn); //function
+
+     //typeof返回值有6种返回值
+	//"number" "string" "boolean" "undefined" "object" "function"
+
+
+    </script>
+</body>
+</html>

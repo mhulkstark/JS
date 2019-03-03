@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+ // 1   hasOwnProperty() 方法会返回一个布尔值，判断对象是否具有指定的属性是自身的属性。
+    // var obj = {
+    //     name : 'zs'
+    // }
+    // console.log(obj.hasOwnProperty('name'));
+    // console.log(obj.hasOwnProperty('age'));
+       var obj = {
+           name : 'qq'
+       }
+        console.log(obj.hasOwnProperty('name'));  //true
+        console.log(obj.hasOwnProperty('age'));   //false
+        
+
+  // 2  isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上
+    // 语法： 对象A.isPrototypeOf(对象B);
+    // 作用： 字面上理解为对象A是否是B的原型，判断对象A是否在B的原型链上，对象A是否是B的祖宗
+    function  Person () {
+
+    }
+    var p = new Person();
+    // // 原型链  p ==> Person.prototype ==> Object.prototype ==> null
+    console.log(Person.isPrototypeOf(p));
+    console.log(Person.prototype.isPrototypeOf(p));
+    
+    // console.log(Object.isPrototypeOf(p));
+    // console.log(Object.prototype.isPrototypeOf(p));
+    
+
+// 3  propertyIsEnumerable() 方法返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性。
+// propertyIsEnumerable():
+        // 语法： 对象.propertyIsEnumerable("属性")
+        // 作用： 判断属性是否可遍历
+        //          1. 判断属性是否是对象自身的
+        //          2. 判断属性是否可遍历
+        //          只有满足了上面两个条件才返回true
+//    var obj = {
+//        name : 'chenge',
+//        age : 18,
+//        hobby : '男',
+//        gender  : 'male'
+//    }
+//    for(var key in obj){
+//        console.log(key);
+       
+//    }
+//    Object.prototype.name = 'mt';
+//    for(var key in Object.prototype){
+//        console.log(key);
+       
+//    }
+//    console.log(Object.prototype.propertyIsEnumerable('name'));  true
+//    console.log(Object.prototype.propertyIsEnumerable('qw'));   false
+
+
+//  4  toLocaleString/toString深入
+//    var obj = {
+//        name : 'mage'
+//    }
+//    console.log(obj + '29期'); ==> [object Object]29期
+//    obj.valueOf() ==>{name : 'mage'}
+ //   obj.toString() ==>[object Object]
+ 
+     
+// console.log(obj - 0); ==>NaN
+
+// var arr = [1,2,3];
+// console.log(arr + '29期'); ==>1,2,329期
+
+
+// console.log([] == 1);false
+// [].valueOf() ==> []
+// [].toString()  ==> ""    ==>   "" == 1
+// Number("")  ==>   0 == 1  ==> false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+</script>
+
+
+</body>
+</html>

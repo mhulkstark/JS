@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/01.jpg" alt="" id="im1">
+    <img src="images/01.jpg" alt="" id="im2">
+    <img src="images/01.jpg" alt="" id="im3">
+
+
+
+    <script>
+    var imgObjs=document.getElementsByTagName("img");
+    for(var i = 0; i<imgObjs.length; i++){
+        imgObjs[i].onclick=function () {
+            alert("被翻牌了");
+        };
+    }
+    
+    
+    </script>
+</body>
+</html>
